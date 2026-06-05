@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shreyanshu Soni | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="SH-photo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #050816;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            background: rgba(5, 8, 22, 0.7);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #9b5cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a:hover {
+            color: #9b5cff;
+            transition: 0.3s;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text h3 {
+            color: #9b5cff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h2 {
+            font-size: 28px;
+            color: #b9b9b9;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            line-height: 1.8;
+            max-width: 600px;
+            color: #d1d1d1;
+        }
+
+        .hero-btns {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #9b5cff;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(155, 92, 255, 0.5);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            border: 2px solid #9b5cff;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #9b5cff;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #9b5cff;
+            box-shadow: 0 0 30px rgba(155, 92, 255, 0.5);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 120px;
+            height: 4px;
+            background: #9b5cff;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            border-radius: 10px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .glass:hover {
+            transform: translateY(-10px);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .bar {
+            width: 100%;
+            height: 10px;
+            background: #1c1f35;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+            background: #9b5cff;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            line-height: 1.7;
+            color: #d1d1d1;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            background: #1c1f35;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .project-links a {
+            color: #9b5cff;
+            font-weight: 600;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: #10152c;
+            color: white;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            background: #090d1f;
+            margin-top: 50px;
+            color: #b9b9b9;
+        }
+
+        @media(max-width:900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media(max-width:600px) {
+            .container {
+                width: 92%;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-image img {
+                width: 260px;
+                height: 260px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav>
+            <div class="logo">PortFolio</div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero" id="home">
+
+            <div class="hero-text">
+                <h3>HELLO, I'M</h3>
+                <h1>Shreyanshu Soni</h1>
+                <h2>Frontend Developer | Cyber Security Student</h2>
+
+                <p>
+                    I build modern, responsive and visually attractive websites.
+                    Passionate about web development, AI, cyber security and creating
+                    projects that solve real-world problems.
+                </p>
+
+                <div class="hero-btns">
+                    <a href="#projects" class="btn secondary-btn">
+                        View Projects
+                    </a>
+                    <a href="Shreyanshu_Soni_Resume.pdf" download="Shreyanshu_Soni_Resume.pdf"
+                        class="btn secondary-btn">
+                        Download Resume
+                    </a>
+                    <a href="https://github.com/shreyanshu-coder" class="btn secondary-btn" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="SH-photo.png" alt="profile">
+            </div>
+
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about-content">
+
+                <div class="glass">
+                    <h3>Who Am I?</h3>
+                    <br>
+                    <p>
+                        I am a B.Tech CSE (Cyber Security) student at DCE Darbhanga.
+                        I enjoy building responsive web applications using HTML,
+                        CSS, Bootstrap and JavaScript. My goal is to secure
+                        internships in Web Development and Cyber Security while
+                        continuously improving my technical skills.
+                    </p>
+                </div>
+
+                <div class="glass">
+                    <h3>Education</h3>
+                    <br>
+                    <p>
+                        B.Tech CSE (Cyber Security)<br>
+                        Darbhanga College of Engineering
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="journey">
+            <h2 class="section-title">My Journey</h2>
+
+            <div class="glass">
+                <p>2025 - Started Programming with C++</p>
+                <br>
+                <p>2025 - Learned Variables, Loops, Functions and Arrays</p>
+                <br>
+                <p>2025 - Started Web Development</p>
+                <br>
+                <p>2026 - Learned HTML , CSS & BOOTSTRAP </p>
+                <br>
+                <p>2026 - Built Blog Website</p>
+                <br>
+                <p>2026 - Built Restaurant Website</p>
+                <br>
+                <p>Currently Learning JavaScript, Python & Cyber Security</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">My Skills</h2>
+
+            <div class="skills-grid">
+
+                <div class="glass skill-card">
+                    <h3>HTML</h3>
+                    <div class="bar">
+                        <div class="fill" style="width:95%"></div>
+                    </div>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>CSS</h3>
+                    <div class="bar">
+                        <div class="fill" style="width:90%"></div>
+                    </div>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>JavaScript</h3>
+                    <div class="bar">
+                        <div class="fill" style="width:70%"></div>
+                    </div>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>Responsive Design</h3>
+                    <div class="bar">
+                        <div class="fill" style="width:85%"></div>
+                    </div>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>Git & GitHub</h3>
+                    <div class="bar">
+                        <div class="fill" style="width:65%"></div>
+                    </div>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>Cyber Security</h3>
+                    <div class="bar">
+                        <div class="fill" style="width:60%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="achievements">
+
+            <h2 class="section-title">Achievements</h2>
+
+            <div class="skills-grid">
+
+                <div class="glass skill-card">
+                    <h3>3+ Projects Built</h3>
+                    <p>Portfolio , Blog Website , Restaurant Website</p>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>Sigma 9.0</h3>
+                    <p>Enrolled in Sigma 9.0 Web Development Program</p>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>Cyber Security Student</h3>
+                    <p>DCE Darbhanga</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="glass project-card">
+                    <img src="project2.jpg" alt="project">
+
+                    <h3>Portfolio Website</h3>
+
+                    <p>
+                        Personal portfolio website showcasing projects, skills,
+                        achievements and contact details with modern responsive UI.
+                    </p>
+
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Responsive</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://shreyanshu-coder.github.io/Shreyanshu_PortFolio/" target="_blank">
+                            Live Demo</a>
+                        <a href="https://github.com/Shreyanshu-coder/Shreyanshu_PortFolio" target="_blank">
+                            GitHub</a>
+                    </div>
+                </div>
+                <div class="glass project-card">
+                    <img src="project1.jpg" alt="project">
+
+                    <h3>ShreyWrites Blog Website</h3>
+
+                    <p>
+                        A responsive blogging website with modern UI, article pages,
+                        contact form, search page and glassmorphism design.
+                    </p>
+
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://shreyanshu-coder.github.io/ShreyWrites-Blog/" target="_blank">
+                            Live Demo</a>
+                        <a href="https://github.com/shreyanshu-coder/ShreyWrites-Blog" target="_blank">
+                            GitHub</a>
+                    </div>
+                </div>
+
+
+                <div class="glass project-card">
+                    <img src="project3.jpg" alt="project">
+
+                    <h3>Restaurant website</h3>
+
+                    <p>
+                        Developed a responsive restaurant website with modern UI/UX, interactive menu sections, food
+                        showcase gallery, contact form, and mobile-friendly design using HTML, CSS, Bootstrap, and
+                        JavaScript.
+
+                    </p>
+
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Responsive</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://shreyanshu-coder.github.io/Spice-Haven-Restro/index.html" target="_blank">
+                            Live Demo</a>
+                        <a href="https://github.com/shreyanshu-coder/Spice-Haven-Restro" target="_blank">
+                            GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="stats">
+            <h2 class="section-title">Quick Stats</h2>
+
+            <div class="skills-grid">
+
+                <div class="glass skill-card">
+                    <h3>3+</h3>
+                    <p>Projects</p>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>6+</h3>
+                    <p>Technologies</p>
+                </div>
+
+                <div class="glass skill-card">
+                    <h3>2025</h3>
+                    <p>Started Coding</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="looking">
+            <h2 class="section-title">Open To Opportunities</h2>
+
+            <div class="glass">
+                <p>
+                    Currently seeking internships in Frontend Development,
+                    Web Development and Cyber Security. Open to learning,
+                    collaborating and contributing to real-world projects.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+
+            <div class="glass contact-box">
+
+                <form action="https://formsubmit.co/shreyanshu189@gmail.com" method="POST">
+
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+
+                    <button class="btn primary-btn">Send Message</button>
+                </form>
+
+            </div>
+        </section>
+
+        <!-- <section>
+            <div style="margin-top: 30px;text-align:center;">
+
+                <a href="https://github.com/shreyanshu-coder">
+                    GitHub
+                </a>
+
+                |
+
+                <a href="https://www.linkedin.com/in/shreyanshu-soni-076728379/">
+
+                    LinkedIn
+                </a>
+
+                |
+
+
+                <a href="mailto:shreyanshu189@gmail.com">
+                    Email
+                </a>
+
+
+            </div>
+        </section> -->
+
+    </div>
+
+    <footer>
+
+        <h3>Shreyanshu Soni</h3>
+
+        <p>Frontend Developer | Cyber Security Student</p>
+
+        <br>
+
+        <a href="https://github.com/shreyanshu-coder" target="_blank">
+            GitHub
+        </a>
+
+        |
+
+        <a href="https://www.linkedin.com/in/shreyanshu-soni-076728379/" target="_blank">
+            LinkedIn
+        </a>
+
+        |
+
+        <a href="mailto:shreyanshu189@gmail.com">Email</a>
+
+        <br><br>
+
+        <p>© 2026 All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>
